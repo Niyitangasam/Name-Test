@@ -7,12 +7,13 @@ import rootReducer from '../reducers/index';
 const loggerMiddleware = createLogger();
 
 const store = createStore(
-    rootReducer,
-    compose(applyMiddleware(thunkMiddleware),
-    window.__REDUX_DEVTOOLS_EXTENSION__&& window.__REDUX_DEVTOOLS_EXTENSION__()
-        // thunkMiddleware,
-        // loggerMiddleware
-    )
+	rootReducer,
+	compose(
+		applyMiddleware(thunkMiddleware),
+		window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+		// thunkMiddleware,
+		// loggerMiddleware
+	)
 );
 
 export default store;

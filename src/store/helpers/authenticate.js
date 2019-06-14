@@ -20,6 +20,7 @@ export const removeCurrentUser = () =>{
 export const loginUser = (history) => dispatch => {
     axios.post(`${API_URL}/users/login`,{email:"akimanaja17@gmail.com",password:"P@ssword1"})
     .then(res=>{
+        console.log('Google auth:=======>',res)
         const { token } = res.data;
         localStorage.setItem('jwtToken', token);
         setAuthToken(token);
